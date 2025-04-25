@@ -16,5 +16,5 @@ for i in range(1, 50000, 500): # Start at 1, move up to 50k by 500 increments
 for i in range(1, 50000, 500): # Start at 1, move up to 50k by 500 increments
     devices_part = dnacConnection.devices.get_device_list(offset=i,limit=500)["response"] # Get from DNAC and only store the data we care about
     for dev in devices_part:
-        if "JHC" in dev["hostname"]:
+        if "OOB" in dev["hostname"]:
             print(f"{dev['hostname']},{dev['managementIpAddress']}")
